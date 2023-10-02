@@ -8,6 +8,8 @@ namespace TechJobsOOAutoGraded6
         private string value;
 
         // TODO: Task 2: Change the fields to auto-implemented properties.
+        public object Id { get { return id; } }
+        public string Value { get { return value;}}
 
         public CoreCompetency()
         {
