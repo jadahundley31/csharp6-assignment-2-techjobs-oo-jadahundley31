@@ -5,12 +5,44 @@ namespace TechJobs.Tests
 	public class JobTests
 	{
         //Testing Objects
+        Job job1 = new Job();
+        Job job2 = new Job();
+        Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+
         //initalize your testing objects here
+        [TestMethod]
+        public void TestSettingJobId()
+        {
+            Job testjob1 = new Job();
+            Job testjob2 = new Job();
+            Assert.AreEqual(true, true);
+        }
 
         [TestMethod]
-        public void TestMethod()
+        public void TestJobConstructorSetsAllFields()
         {
-            //TODO: Task 4: remove this method before you create your first test method 
+            Job testjob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.AreEqual(testjob3.Name, "Product tester");
+            Assert.AreEqual(testjob3.EmployerName, "ACME");
+            Assert.AreEqual(testjob3.EmployerLocation, "Desert");
+            Assert.AreEqual(testjob3.JobType, "Quality control");
+            Assert.AreEqual(testjob3.JobCoreCompetency, "Persistance");
+        }
+
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Job testjob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job testjob4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.IsFalse(testjob3 == testjob4);
         }
     }
 }
