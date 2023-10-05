@@ -28,10 +28,10 @@ namespace TechJobs.Tests
             PositionType("Quality control"), new CoreCompetency("Persistence"));
 
             Assert.AreEqual(testjob3.Name, "Product tester");
-            Assert.AreEqual(testjob3.EmployerName, "ACME");
-            Assert.AreEqual(testjob3.EmployerLocation, "Desert");
-            Assert.AreEqual(testjob3.JobType, "Quality control");
-            Assert.AreEqual(testjob3.JobCoreCompetency, "Persistance");
+            Assert.AreEqual(testjob3.EmployerName.Value, "ACME");
+            Assert.AreEqual(testjob3.EmployerLocation.Value, "Desert");
+            Assert.AreEqual(testjob3.JobType.Value, "Quality control");
+            Assert.AreEqual(testjob3.JobCoreCompetency.Value, "Persistence");
         }
 
         [TestMethod]
@@ -43,6 +43,12 @@ namespace TechJobs.Tests
             PositionType("Quality control"), new CoreCompetency("Persistence"));
 
             Assert.IsFalse(testjob3 == testjob4);
+        }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+
         }
     }
 }
