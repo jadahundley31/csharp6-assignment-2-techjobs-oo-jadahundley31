@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml.Linq;
+
 namespace TechJobsOOAutoGraded6
 {
 	public class Job
@@ -42,7 +44,32 @@ namespace TechJobsOOAutoGraded6
 
         // TODO: Task 5: Generate custom ToString() method.
         //Until you create this method, you will not be able to print a job to the console.
-
+        public override string ToString()
+        {
+            String emptyField = "Data not available";
+            if (Name == null || Name == "")
+            {
+                Name = emptyField;
+            }
+            if (EmployerName == null || EmployerName.Value == "")
+            {
+                EmployerName.Value = emptyField;
+            }
+            if (EmployerLocation == null || EmployerLocation.Value == "")
+            {
+                EmployerLocation.Value = emptyField;
+            }
+            if (JobType == null || JobType.Value == "")
+            {
+                JobType.Value = emptyField;
+            }
+            return "\n" + "ID: " + Id + "\n" +
+                "Name: " + Name + "\n" +
+                "Employer: " + EmployerName.Value + "\n" +
+                "Location: " + EmployerLocation.Value + "\n" +
+                "Position Type: " + JobType.Value + "\n" +
+                "Core Competency: " + JobCoreCompetency.Value + "\n";
+        }
 
 
     }

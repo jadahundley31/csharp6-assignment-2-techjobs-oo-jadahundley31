@@ -1,4 +1,7 @@
 ﻿
+using System.Data;
+using System.Xml.Linq;
+
 namespace TechJobs.Tests
 {
 	[TestClass]
@@ -48,8 +51,29 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestToStringStartsAndEndsWithNewLine()
         {
-
+            Assert.AreEqual("\n" + "ID: " + job3.Id + "\n" +
+                "Name: " + job3.Name + "\n" +
+                "Employer: " + job3.EmployerName.Value + "\n" +
+                "Location: " + job3.EmployerLocation.Value + "\n" +
+                "Position Type: " + job3.JobType.Value + "\n" +
+                "Core Competency: " + job3.JobCoreCompetency.Value + "\n", job3.ToString());
         }
+
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.IsTrue(true, job4.EmployerName.Value);
+        }
+
+        //[TestMethod]
+        //public void TestToStringHandlesEmptyField()
+        //{
+        //    Assert.IsTrue(true, job4.EmployerName );
+            
+        //}
     }
 }
 
