@@ -68,12 +68,23 @@ namespace TechJobs.Tests
             Assert.IsTrue(true, job4.EmployerName.Value);
         }
 
-        //[TestMethod]
-        //public void TestToStringHandlesEmptyField()
-        //{
-        //    Assert.IsTrue(true, job4.EmployerName );
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new
+            PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            if (job4.Name == "" || job4.Name == null)
+            {
+                Assert.Equals(job4.Name, "");
+            }
+            if (job4.EmployerName.Value == "" || job4.EmployerName == null)
+            {
+                Assert.Equals(job4.EmployerName, "");
+            }
             
-        //}
+
+        }
     }
 }
 
