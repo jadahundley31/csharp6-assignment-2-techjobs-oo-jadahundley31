@@ -18,7 +18,7 @@ namespace TechJobsOO.Tests
 
             foreach (var name in constructorInfos)
             {
-                conNames.Add(name.ToString(name.GetValue(), name.GetJobCoreCompetency()));
+                conNames.Add(name.ToString());
             }
 
             foreach (string name in conNames)
@@ -57,7 +57,7 @@ namespace TechJobsOO.Tests
 
             foreach (var name in constructorInfos)
             {
-                conNames.Add(name.ToString(name.GetValue(), name.GetJobCoreCompetency()));
+                conNames.Add(name.ToString());
             }
 
             foreach (string name in conNames)
@@ -83,10 +83,10 @@ namespace TechJobsOO.Tests
 
             //verify 
             Assert.AreEqual(testJob1.Name, "Product tester", "Testing Job Name");
-            Assert.AreEqual(testJob1.EmployerName.ToString(testJob1.EmployerName.GetValue(), testJob1.EmployerName.GetJobCoreCompetency()), "ACME", "Testing EmployerName Value");
-            Assert.AreEqual(testJob1.EmployerLocation.ToString(testJob1.EmployerLocation.GetValue(), testJob1.EmployerLocation.GetJobCoreCompetency()), "Desert", "Testing EmployerLocation Value");
-            Assert.AreEqual(testJob1.JobType.ToString(testJob1.JobType.GetValue(), testJob1.JobType.GetJobCoreCompetency()), "Quality control", "Testing JobType Value");
-            Assert.AreEqual(testJob1.JobCoreCompetency.ToString(testJob1.JobCoreCompetency.GetValue(), testJob1.JobCoreCompetency.GetJobCoreCompetency()), "Persistence", "Testing JobCoreCompetency Value");
+            Assert.AreEqual(testJob1.EmployerName.ToString(), "ACME", "Testing EmployerName Value");
+            Assert.AreEqual(testJob1.EmployerLocation.ToString(), "Desert", "Testing EmployerLocation Value");
+            Assert.AreEqual(testJob1.JobType.ToString(), "Quality control", "Testing JobType Value");
+            Assert.AreEqual(testJob1.JobCoreCompetency.ToString(), "Persistence", "Testing JobCoreCompetency Value");
             Assert.AreNotEqual(testJob1.Id, testJob2.Id, "Job objects should have unique ids");
         }
 

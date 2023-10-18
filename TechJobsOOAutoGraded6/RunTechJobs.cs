@@ -21,7 +21,7 @@ namespace TechJobsOOAutoGraded6
                 foreach (Job job in jobs)
                 {
                     Console.WriteLine(job);
-                    Console.ReadLine();
+                    
                 }
         }
     }

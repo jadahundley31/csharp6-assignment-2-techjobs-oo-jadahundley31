@@ -19,7 +19,7 @@ namespace TechJobsOO.Tests
 
             foreach (var name in constructorInfos)
             {
-                conNames.Add(name.ToString(name.GetValue(), name.GetJobCoreCompetency()));
+                conNames.Add(name.ToString());
 
             }
 
@@ -173,7 +173,7 @@ namespace TechJobsOO.Tests
             Assert.IsTrue(localCount > 0, "ToString method has no local variables");
 
             //verify output
-            Assert.AreEqual(testPosition.Value.ToString(testPosition.Value.GetValue(), testPosition.Value.GetJobCoreCompetency()), "Quality Control", "ToString does not return same output as set value");
+            Assert.AreEqual(testPosition.Value.ToString(), "Quality Control", "ToString does not return same output as set value");
         }
 
     }
